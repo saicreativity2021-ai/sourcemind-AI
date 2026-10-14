@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>SourceMind AI — Learn with evidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S<span>✦</span></div>
+        <div><div class="brand-name">SourceMind <b>AI</b></div><div class="brand-caption">LEARN WITH EVIDENCE</div></div>
+      </div>
+      <button class="workspace-switch"><span class="workspace-icon">⌘</span><span><b>My workspace</b><small>Student account</small></span><span class="chevron">⌄</span></button>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+        <button class="nav-item" data-view="tutor"><span>✧</span> AI Tutor <i class="nav-pill">NEW</i></button>
+        <button class="nav-item" data-view="library"><span>▤</span> My sources <span class="nav-count" id="sourceCount">2</span></button>
+        <button class="nav-item" data-view="quiz"><span>☷</span> Practice quiz</button>
+        <button class="nav-item" data-view="progress"><span>◔</span> Knowledge map</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card"><div class="upgrade-icon">✦</div><b>Learning, made clear.</b><p>Answers connected to your study material — not just guesses.</p><button id="learnHowBtn">How it works <span>↗</span></button></div>
+        <div class="profile"><div class="avatar">SK</div><div class="profile-copy"><b>Student workspace</b><small>Free prototype</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumbCurrent">Overview</b></div>
+        <div class="top-actions"><div class="status"><span></span> Prototype mode</div><button class="icon-btn" title="Notifications">♧</button><div class="top-avatar">SK</div></div>
+      </header>
+
+      <section class="view active-view" id="view-overview">
+        <div class="welcome-row"><div><div class="eyebrow"><span class="sparkle">✦</span> YOUR LEARNING SPACE</div><h1>Make every question<br class="mobile-break"> <em>count.</em></h1><p class="subhead">Your personal AI tutor that shows its sources and helps you master what matters.</p></div><button class="primary-btn" data-go="tutor"> <span>✧</span> Ask SourceMind <span class="arrow">↗</span></button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Learning streak</span><span class="stat-icon purple">✧</span></div><div class="stat-value">4 <small>days</small></div><div class="stat-foot"><span class="positive">↑ 2 days</span> vs. last week</div><div class="mini-bars"><i style="height:34%"></i><i style="height:52%"></i><i style="height:42%"></i><i style="height:68%"></i><i style="height:58%"></i><i style="height:83%"></i><i class="bar-today" style="height:100%"></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Topics mastered</span><span class="stat-icon blue">◈</span></div><div class="stat-value"><span id="masteredStat">8</span><small> / 12</small></div><div class="progress-track"><span style="width:67%"></span></div><div class="stat-foot">67% of your current topics</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Questions explored</span><span class="stat-icon orange">↗</span></div><div class="stat-value" id="questionsStat">24</div><div class="stat-foot"><span class="positive">↑ 18%</span> this week</div><div class="stat-note">Curiosity is a superpower.</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Source coverage</span><span class="stat-icon green">⌕</span></div><div class="stat-value">96<small>%</small></div><div class="stat-foot">Demo answer evidence coverage</div><div class="coverage-line"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel focus-panel"><div class="panel-heading"><div><div class="eyebrow">PICK UP WHERE YOU LEFT OFF</div><h2>Continue learning</h2></div><button class="text-btn" data-go="progress">View knowledge map ↗</button></div>
+            <div class="topic-list">
+              <div class="topic-row"><div class="topic-symbol symbol-purple">∑</div><div class="topic-info"><b>Algorithms & problem solving</b><small>Last studied 2 hours ago · 6 concepts</small><div class="topic-track"><span style="width:82%"></span></div></div><div class="topic-score">82%<small>Strong</small></div><button class="round-arrow" data-topic="algorithm">↗</button></div>
+              <div class="topic-row"><div class="topic-symbol symbol-blue">⌘</div><div class="topic-info"><b>Digital logic design</b><small>Last studied yesterday · 4 concepts</small><div class="topic-track"><span class="weak-fill" style="width:46%"></span></div></div><div class="topic-score needs-work">46%<small>Review</small></div><button class="round-arrow" data-topic="logic">↗</button></div>
+              <div class="topic-row"><div class="topic-symbol symbol-orange">◉</div><div class="topic-info"><b>Crystal structures</b><small>Last studied 3 days ago · 5 concepts</small><div class="topic-track"><span style="width:71%"></span></div></div><div class="topic-score">71%<small>Growing</small></div><button class="round-arrow" data-topic="crystal">↗</button></div>
+            </div>
+          </article>
+          <article class="panel source-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR KNOWLEDGE BASE</div><h2>Recent sources</h2></div><button class="round-plus" data-go="library">+</button></div>
+            <div id="recentSources" class="recent-sources">
+              <div class="source-row"><div class="file-icon pdf">PDF</div><div class="source-meta"><b>Algorithms_Notes.pdf</b><small>12 pages · Added today</small></div><span class="source-check">✓</span></div>
+              <div class="source-row"><div class="file-icon doc">DOC</div><div class="source-meta"><b>Digital_Logic_Unit1.pdf</b><small>8 pages · Added yesterday</small></div><span class="source-check">✓</span></div>
+            </div>
+            <button class="upload-cta" data-go="library"><span>＋</span> Add study materials <span>↗</span></button>
+            <div class="privacy-note"><span>♧</span><span><b>Your sources, your learning.</b><small>Prototype files stay in this browser session.</small></span></div>
+          </article>
+        </div>
+        <div class="bottom-banner"><div class="banner-orb">✦</div><div><b>Don't just get the answer. Understand why.</b><p>Ask a question and see the evidence behind every explanation.</p></div><button data-go="tutor">Start with a question <span>→</span></button></div>
+      </section>
+
+      <section class="view" id="view-tutor">
+        <div class="page-title"><div class="eyebrow"><span class="sparkle">✦</span> SOURCE-GROUNDED LEARNING</div><h1>Your AI <em>tutor.</em></h1><p class="subhead">Ask anything from your materials. Every demo answer includes a source reference.</p></div>
+        <div class="tutor-layout">
+          <div class="panel chat-panel"><div class="chat-head"><div class="tutor-orb">✧</div><div><b>SourceMind Assistant</b><small><span class="online-dot"></span> Ready to help · Demo mode</small></div><button class="text-btn reset-chat" id="resetChat">Reset chat ↻</button></div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="assistant-message"><div class="message-avatar">✦</div><div class="message-body"><div class="message-name">SourceMind <span>AI TUTOR</span></div><div class="bubble">Hey there! 👋 Ask me a question about your study materials. I'll explain the concept and show you where the information comes from.</div><div class="suggestion-label">TRY ASKING</div><div class="suggestions"><button data-question="What is an algorithm?">What is an algorithm?</button><button data-question="Explain the steps in problem solving">Steps in problem solving</button><button data-question="What is a crystal structure?">Crystal structures</button></div></div></div>
+            </div>
+            <div class="chat-input-wrap"><div class="input-tools"><span>✦</span> Answers are designed to be grounded in your sources</div><form id="chatForm" class="chat-form"><textarea id="chatInput" rows="1" placeholder="Ask a question about your notes..." aria-label="Ask a question"></textarea><button type="submit" class="send-btn" aria-label="Send question">↑</button></form><div class="input-footer"><span>↵ Enter to send · Shift + Enter for a new line</span><span class="demo-label">DEMO RESPONSES</span></div></div>
+          </div>
+          <aside class="tutor-side"><div class="panel context-card"><div class="side-heading"><span class="side-heading-icon">▤</span><div><b>Knowledge context</b><small>Sources available to tutor</small></div></div><div id="contextSources"><div class="context-source"><span class="tiny-file pdf">P</span><div><b>Algorithms_Notes.pdf</b><small>Page 2, 4, 6</small></div><span class="check-mini">✓</span></div><div class="context-source"><span class="tiny-file doc">P</span><div><b>Digital_Logic_Unit1.pdf</b><small>Page 1, 3</small></div><span class="check-mini">✓</span></div></div><button class="outline-btn full-btn" data-go="library">Manage sources <span>↗</span></button></div>
+            <div class="panel how-card"><div class="how-icon">◎</div><h3>How grounded answers work</h3><div class="how-step"><span>1</span><div><b>Retrieve</b><small>Find relevant passages in your sources.</small></div></div><div class="how-step"><span>2</span><div><b>Explain</b><small>Build a clear answer from those passages.</small></div></div><div class="how-step"><span>3</span><div><b>Verify</b><small>Show citations so you can check the answer.</small></div></div><div class="prototype-note">Prototype simulation · Connect a RAG backend for real retrieval.</div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-library">
+        <div class="page-title"><div class="eyebrow"><span class="sparkle">✦</span> YOUR PERSONAL KNOWLEDGE BASE</div><h1>My <em>sources.</em></h1><p class="subhead">Organize your notes and build a study space your AI tutor can reference.</p></div>
+        <div class="library-top"><div class="search-box"><span>⌕</span><input id="sourceSearch" placeholder="Search your sources..." /></div><div class="library-actions"><span class="source-total" id="libraryTotal">2 sources</span><button class="primary-btn" id="uploadButton"><span>＋</span> Upload source</button><input type="file" id="fileInput" accept=".pdf,.txt,.md,.doc,.docx" multiple hidden /></div></div>
+        <div class="upload-drop" id="dropZone"><div class="upload-cloud">↑</div><b>Drop your study materials here</b><p>PDF, TXT, MD, DOC or DOCX · Select a file to add it to this prototype</p><button class="outline-btn" id="browseFiles">Browse files</button><small>Demo note: files are listed locally; actual PDF parsing and RAG retrieval require a backend.</small></div>
+        <div class="section-title-row"><h2>All sources <span id="allSourcesCount">02</span></h2><span class="muted">Recently added first</span></div>
+        <div class="source-grid" id="sourceGrid"></div>
+      </section>
+
+      <section class="view" id="view-quiz">
+        <div class="page-title"><div class="eyebrow"><span class="sparkle">✦</span> ACTIVE RECALL</div><h1>Practice & <em>improve.</em></h1><p class="subhead">Test what you know, spot gaps, and turn your weak topics into strengths.</p></div>
+        <div class="quiz-layout"><div class="panel quiz-panel"><div class="quiz-progress-row"><span class="quiz-tag">QUICK PRACTICE</span><span id="quizCounter">QUESTION 1 OF 4</span></div><div class="quiz-progress"><span id="quizProgressFill" style="width:25%"></span></div><div id="quizContent"></div></div><aside class="panel quiz-side"><div class="quiz-side-icon">✧</div><h3>Small steps. Real progress.</h3><p>Active recall helps you check your understanding instead of just rereading notes.</p><div class="quiz-metric"><span>Questions in this round</span><b>04</b></div><div class="quiz-metric"><span>Current best score</span><b id="bestScore">75%</b></div><button class="outline-btn full-btn" id="restartQuiz">↻ Restart practice</button><div class="prototype-note">Quiz questions are sample content for the prototype.</div></aside></div>
+      </section>
+
+      <section class="view" id="view-progress">
+        <div class="page-title"><div class="eyebrow"><span class="sparkle">✦</span> YOUR LEARNING ANALYTICS</div><h1>Knowledge <em>map.</em></h1><p class="subhead">See what feels solid, what is improving, and what to review next.</p></div>
+        <div class="stats-grid progress-stats"><article class="stat-card"><div class="stat-top"><span>Overall mastery</span><span class="stat-icon purple">◈</span></div><div class="stat-value" id="overallMastery">68<small>%</small></div><div class="progress-track"><span style="width:68%"></span></div><div class="stat-foot">Across 12 tracked concepts</div></article><article class="stat-card"><div class="stat-top"><span>Strong concepts</span><span class="stat-icon green">✓</span></div><div class="stat-value">8</div><div class="stat-foot">Keep them fresh with quick reviews</div></article><article class="stat-card"><div class="stat-top"><span>Needs review</span><span class="stat-icon orange">↗</span></div><div class="stat-value">4</div><div class="stat-foot">A good place to focus next</div></article></div>
+        <div class="panel map-panel"><div class="panel-heading"><div><div class="eyebrow">CONCEPT BREAKDOWN</div><h2>Your current mastery</h2></div><span class="legend"><i></i> Mastery estimate</span></div><div class="mastery-list" id="masteryList"></div></div>
+        <div class="bottom-banner review-banner"><div class="banner-orb">◎</div><div><b>Recommended next: Digital Logic Design</b><p>Review number systems and logic gates, then try a short quiz.</p></div><button data-topic="logic">Review topic <span>→</span></button></div>
+      </section>
+
+      <footer class="footer"><span>© 2026 SourceMind AI</span><span>Built for learning with evidence <b>✦</b></span><span class="footer-prototype">HACKATHON PROTOTYPE</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="howModal"><div class="modal"><button class="modal-close" id="closeModal">×</button><div class="modal-mark">✦</div><div class="eyebrow">THE SOURCEMIND APPROACH</div><h2>Answers you can <em>verify.</em></h2><p>SourceMind AI is designed to help students learn from their own materials. A real implementation uses Retrieval-Augmented Generation (RAG) to find relevant document passages, generates an explanation from that evidence, and displays citations so learners can check the source.</p><div class="modal-flow"><div><b>01 · INGEST</b><small>Upload notes and split them into searchable chunks.</small></div><div><b>02 · RETRIEVE</b><small>Find relevant passages using embeddings and search.</small></div><div><b>03 · EXPLAIN</b><small>Generate an answer with passage-level citations.</small></div><div><b>04 · TRACE</b><small>Update topic mastery from quiz performance.</small></div></div><button class="primary-btn" id="modalDone">Got it <span>→</span></button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
